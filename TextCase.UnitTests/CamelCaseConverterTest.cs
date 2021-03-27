@@ -4,16 +4,16 @@ using Xunit;
 
 namespace TextCase.UnitTests
 {
-    public class CapitaliseCaseConverterTest
+    public class CamelCaseConverterTest
     {
         [Theory]
-        [InlineData("Hello World", "Hello world")]
-        [InlineData("ICH BIN GLÜCKLICH", "Ich bin glücklich")]
-        [InlineData("  che ore SONO? ", "Che ore sono?")]
-        public void Convert_WhenCapitaliseCase_TextShouldBeCapitaliseCase(string input, string output)
+        [InlineData("hello world", "helloWorld")]
+        [InlineData("icH bIn glückLICH", "ichBinGlücklich")]
+        [InlineData("  che ore sono? ", "cheOreSono?")]
+        public void Convert_WhenCamelCase_TextShouldBeCamelCase(string input, string output)
         {
             // Setup
-            var service = new CapitaliseCaseConverter();
+            var service = new CamelCaseConverter();
 
             // Execute
             var convertedText = service.Convert(input);

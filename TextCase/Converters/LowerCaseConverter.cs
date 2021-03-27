@@ -2,7 +2,7 @@
 namespace TextCase.Converters
 {
     // <summary>
-    //// Represents a uppercase converter
+    //// Represents a lowercase converter
     /// </summary>
     public class LowerCaseConverter : ICaseConverter
     {

@@ -4,7 +4,7 @@ using System.Globalization;
 namespace TextCase.Converters
 {
     // <summary>
-    //// Represents a uppercase converter
+    //// Represents a title converter
     /// </summary>
     public class TitleCaseConverter : ICaseConverter
     {

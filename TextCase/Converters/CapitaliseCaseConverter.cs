@@ -5,7 +5,7 @@ using TextCase.Extensions;
 namespace TextCase.Converters
 {
     // <summary>
-    //// Represents a uppercase converter
+    //// Represents a capitalise converter
     /// </summary>
     public class CapitaliseCaseConverter : ICaseConverter
     {
@@ -20,7 +20,6 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
-
             return text.Trim().ToFirstLetterUpper();
         }
     }

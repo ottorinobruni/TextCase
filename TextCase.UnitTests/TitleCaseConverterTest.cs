@@ -11,7 +11,7 @@ namespace TextCase.UnitTests
         [InlineData("icH bIn glückLICH", "Ich Bin Glücklich")]
         [InlineData("  che ore sono? ", "  Che Ore Sono? ")]
         [InlineData("UNICEF and children", "UNICEF And Children")]
-        public void Convert_WhenUpperCase_TextShouldBeUpperCase(string input, string output)
+        public void Convert_WhenTitleCase_TextShouldBeTitleCase(string input, string output)
         {
             // Setup
             var service = new TitleCaseConverter();
