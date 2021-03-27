@@ -4,10 +4,10 @@ namespace TextCase.Converters
     // <summary>
     //// Represents a uppercase converter
     /// </summary>
-    public class UpperCaseConverter : ICaseConverter
+    public class LowerCaseConverter : ICaseConverter
     {
         /// <summary>
-        /// Returns a string converted to uppercase using the casing rules of the invariant culture.
+        /// Returns a string converted to lowercase using the casing rules of the invariant culture.
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -17,7 +17,7 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
-            return text.ToUpperInvariant();
+            return text.ToLowerInvariant();
         }
     }
 }
