@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
@@ -20,9 +21,7 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var firstPart = text.Trim().Substring(0, 1).ToUpperInvariant();
-            var secondPart = text.Trim().Length > 1 ? text.Trim()[1..].ToLowerInvariant() : "";
-            return String.Format("{0}{1}", firstPart, secondPart);
+            return text.Trim().ToFirstLetterUpper();
         }
     }
 }
