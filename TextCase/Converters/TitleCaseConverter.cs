@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
@@ -19,7 +20,7 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
-            return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text);
+            return text.ToTitleCase();
         }
     }
 }

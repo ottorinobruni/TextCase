@@ -20,7 +20,7 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
-            return text.Trim().ToFirstLetterUpper();
+            return text.Trim().ToFirstLetterUpperCase();
         }
     }
 }

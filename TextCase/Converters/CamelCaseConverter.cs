@@ -28,7 +28,7 @@ namespace TextCase.Converters
             {
                 if (!String.IsNullOrEmpty(word))
                 {
-                    builder.Append(isFirstTime ? word.ToLowerInvariant(): word.ToFirstLetterUpper());
+                    builder.Append(isFirstTime ? word.ToLowerInvariant(): word.ToFirstLetterUpperCase());
                     isFirstTime = false;
                 }
             }
