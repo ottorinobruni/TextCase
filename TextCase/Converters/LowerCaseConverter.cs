@@ -7,10 +7,10 @@ namespace TextCase.Converters
     public class LowerCaseConverter : ICaseConverter
     {
         /// <summary>
-        /// Returns a string converted to lowercase using the casing rules of the invariant culture.
+        /// Converts the specified string to lowercase using the casing rules of the invariant culture.
         /// </summary>
-        /// <param name="text"></param>
-        /// <returns></returns>
+        /// <param name="text">The string to convert to lowercase case.</param>
+        /// <returns>The specified text converted to lowercase case.</returns>
         public string Convert(string text)
         {
             if (string.IsNullOrEmpty(text))

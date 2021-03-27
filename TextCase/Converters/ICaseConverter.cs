@@ -7,7 +7,7 @@ namespace TextCase.Converters
     public interface ICaseConverter
     {
         /// <summary>
-        /// Converts a text to a string
+        /// Converts the specified string to a string.
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
