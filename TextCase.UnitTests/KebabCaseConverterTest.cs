@@ -4,16 +4,16 @@ using Xunit;
 
 namespace TextCase.UnitTests
 {
-    public class SnackCaseConverterTest
+    public class KebabCaseConverterTest
     {
         [Theory]
-        [InlineData("hello world", "hello_world")]
-        [InlineData("icH bIn glückLICH", "ich_bin_glücklich")]
-        [InlineData(" che ore sono? ", "_che_ore_sono?_")]
-        public void Convert_WhenSnackCase_TextShouldBeSnackCase(string input, string output)
+        [InlineData("hello world", "hello-world")]
+        [InlineData("icH bIn glückLICH", "ich-bin-glücklich")]
+        [InlineData(" che ore sono? ", "-che-ore-sono?-")]
+        public void Convert_WhenKebabCase_TextShouldBeKebabCase(string input, string output)
         {
             // Setup
-            var service = new SnackCaseConverter();
+            var service = new KebabCaseConverter();
 
             // Execute
             var convertedText = service.Convert(input);
