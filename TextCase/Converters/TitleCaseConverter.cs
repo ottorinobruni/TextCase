@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
+using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
     // <summary>
-    //// Represents a uppercase converter
+    //// Represents a title converter
     /// </summary>
     public class TitleCaseConverter : ICaseConverter
     {
@@ -19,7 +20,7 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
-            return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text);
+            return text.ToTitleCase();
         }
     }
 }
