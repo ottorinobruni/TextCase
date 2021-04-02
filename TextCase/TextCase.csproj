@@ -9,6 +9,7 @@
      <GeneratePackageOnBuild>true</GeneratePackageOnBuild> 
     <RepositoryUrl>https://github.com/ottorinobruni/TextCase</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
 
