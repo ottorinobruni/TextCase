@@ -1,5 +1,5 @@
 # TextCase
-The TextCase library lets you manipulate strings from one case-styling to another.
+The TextCase library for .NET helps changing the cases of existing texts.
 
 There are the cases currently available:
 - UpperCase
