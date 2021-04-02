@@ -3,39 +3,26 @@ using TextCase.Converters;
 
 namespace TextCase
 {
-    public static class TextCaseFactory
+    internal static class TextCaseFactory
     {
-        public static ICaseConverter GetCaseConverter(Case textCase)
+        internal static ICaseConverter GetCaseConverter(Case textCase)
         {
-            switch (textCase)
+            return textCase switch
             {
-                case Case.UpperCase:
-                    return new UpperCaseConverter();
-                case Case.LowerCase:
-                    return new LowerCaseConverter();
-                case Case.TitleCase:
-                    return new TitleCaseConverter();
-                case Case.CapitaliseCase:
-                    return new CapitaliseCaseConverter();
-                case Case.CapitaliseWordsCase:
-                    return new CapitaliseWordsCaseConverter();
-                case Case.ReverseCase:
-                    return new ReverseCaseConverter();
-                case Case.AlternateCase:
-                    return new AlternateCaseConverter();
-                case Case.CamelCase:
-                    return new CamelCaseConverter();
-                case Case.PascalCase:
-                    return new PascalCaseConverter();
-                case Case.KebabCase:
-                    return new KebabCaseConverter();
-                case Case.SnackCase:
-                    return new SnackCaseConverter();
-                case Case.HashtagCase:
-                    return new HashtagCaseConverter();
-                default:
-                    throw new ArgumentException("No valid TextCase");
-            }
+                Case.UpperCase => new UpperCaseConverter(),
+                Case.LowerCase => new LowerCaseConverter(),
+                Case.TitleCase => new TitleCaseConverter(),
+                Case.CapitaliseCase => new CapitaliseCaseConverter(),
+                Case.CapitaliseWordsCase => new CapitaliseWordsCaseConverter(),
+                Case.ReverseCase => new ReverseCaseConverter(),
+                Case.AlternateCase => new AlternateCaseConverter(),
+                Case.CamelCase => new CamelCaseConverter(),
+                Case.PascalCase => new PascalCaseConverter(),
+                Case.KebabCase => new KebabCaseConverter(),
+                Case.SnackCase => new SnackCaseConverter(),
+                Case.HashtagCase => new HashtagCaseConverter(),
+                _ => throw new ArgumentException("No valid TextCase"),
+            };
         }
     }
 }
