@@ -17,10 +17,6 @@ There are the cases currently available:
 
 [![.NET](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml/badge.svg)](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml)
 
-## Get it on NuGet:
-
-```cscharp
-PM> Install-Package TextCase
 ```
 ## Usage:
 
@@ -61,6 +57,11 @@ TextCase.Convert("You talking to me?", Case.SnackCase);
 // #You #talking #to #me?
 TextCase.Convert("You talking to me?", Case.HashtagCase);         
 ```
+
+## Get it on NuGet:
+
+```cscharp
+PM> Install-Package TextCase
 
 ## Feedback and Contribution
 Please feel free to send in a Pull Request, or drop me an email. Cheers!
