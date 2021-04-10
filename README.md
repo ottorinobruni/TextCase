@@ -15,6 +15,12 @@ There are the cases currently available:
 - SnackCase
 - HashtagCase
 
+It's possible to count in the text:
+- number of characters
+- number of words
+- number of letters
+- number of sentences
+
 [![.NET](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml/badge.svg)](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml)
 
 ## Usage:
@@ -54,7 +60,13 @@ TextCase.Convert("You talking to me?", Case.KebabCase);
 TextCase.Convert("You talking to me?", Case.SnackCase);           
 
 // #You #talking #to #me?
-TextCase.Convert("You talking to me?", Case.HashtagCase);         
+TextCase.Convert("You talking to me?", Case.HashtagCase);   
+
+// Text, Words, Letters and Sentences Count
+TextCase.GetTextCount("You talking to me?");  
+TextCase.GetWordsCount("You talking to me?");  
+TextCase.GetLettersCount("You talking to me?");  
+TextCase.GetSentencesCount("You talking to me?");  
 ```
 
 ## Get it on NuGet:
