@@ -52,5 +52,20 @@ namespace TextCase.UnitTests
             var actual = result;
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("hello world. icH bIn glückLICH", 2)]
+        [InlineData(" che ore sono? ", 1)]
+        public void GetSentencesCount_WhenInput_SentencesShouldBeCount(string input, int count)
+        {
+            // Execute
+            var result = TextCase.GetSentencesCount(input);
+
+            // Assert
+            var expected = count;
+            var actual = result;
+            Assert.Equal(expected, actual);
+        }
     }
 }

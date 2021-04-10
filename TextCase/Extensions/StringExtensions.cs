@@ -63,5 +63,19 @@ namespace TextCase.Extensions
             return value.Count(char.IsLetter);
         }
 
+        /// <summary>
+        /// Gets the number of sentences in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of sentences in the current string.</returns>
+        internal static int GetSentencesCount(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            return value.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Length;
+        }
+
     }
 }
