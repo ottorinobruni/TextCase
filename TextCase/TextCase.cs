@@ -31,5 +31,10 @@ namespace TextCase
         {
             return text.GetTextCount();
         }
+
+        public static int GetWordsCount(string text)
+        {
+            return text.GetWordsCount();
+        }
     }
 }

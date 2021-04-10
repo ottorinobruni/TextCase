@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace TextCase.Extensions
 {
@@ -24,7 +25,27 @@ namespace TextCase.Extensions
         /// <returns>The number of characters in the current string.</returns>
         internal static int GetTextCount(this string value)
         {
-            return (String.IsNullOrEmpty(value)) ? 0 : value.Length;
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            return value.Length;
+        }
+
+        /// <summary>
+        /// Gets the number of words in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of words in the current string.</returns>
+        internal static int GetWordsCount(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            return Regex.Replace(value, "[^a-zA-Z0-9_]+", " ")
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                .Length;
         }
 
     }
