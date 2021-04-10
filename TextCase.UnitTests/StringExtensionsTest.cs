@@ -36,5 +36,21 @@ namespace TextCase.UnitTests
             var actual = result;
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("hello world", 10)]
+        [InlineData("icH bIn glückLICH", 15)]
+        [InlineData(" che ore sono? ", 10)]
+        public void GetLettersCount_WhenInput_LettersShouldBeCount(string input, int count)
+        {
+            // Execute
+            var result = TextCase.GetLettersCount(input);
+
+            // Assert
+            var expected = count;
+            var actual = result;
+            Assert.Equal(expected, actual);
+        }
     }
 }

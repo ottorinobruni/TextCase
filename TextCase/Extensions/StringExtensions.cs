@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace TextCase.Extensions
@@ -46,6 +47,20 @@ namespace TextCase.Extensions
             return Regex.Replace(value, "[^a-zA-Z0-9_]+", " ")
                 .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                 .Length;
+        }
+
+        /// <summary>
+        /// Gets the number of letters in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of letters in the current string.</returns>
+        internal static int GetLettersCount(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            return value.Count(char.IsLetter);
         }
 
     }
