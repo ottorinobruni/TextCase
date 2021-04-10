@@ -16,5 +16,16 @@ namespace TextCase.Extensions
         {
             return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(value);
         }
+
+        /// <summary>
+        /// Gets the number of characters in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of characters in the current string.</returns>
+        internal static int GetTextCount(this string value)
+        {
+            return (String.IsNullOrEmpty(value)) ? 0 : value.Length;
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using TextCase.Converters;
+using TextCase.Extensions;
 
 namespace TextCase
 {
@@ -24,6 +25,11 @@ namespace TextCase
         public static string Convert(string text, Case textCase)
         {
             return TextCaseFactory.GetCaseConverter(textCase).Convert(text);
+        }
+
+        public static int GetTextCount(string text)
+        {
+            return text.GetTextCount();
         }
     }
 }
