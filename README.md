@@ -1,4 +1,6 @@
 # TextCase
+[![.NET](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml/badge.svg)](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml)
+
 The TextCase library for .NET helps changing the cases of existing texts.
 
 There are the cases currently available:
@@ -20,8 +22,6 @@ It's possible to count in the text:
 - number of words
 - number of letters
 - number of sentences
-
-[![.NET](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml/badge.svg)](https://github.com/ottorinobruni/TextCase/actions/workflows/textcase-tests.yml)
 
 ## Usage:
 
