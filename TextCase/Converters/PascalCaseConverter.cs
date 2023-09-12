@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a pascal converter
+    /// <summary>
+    /// Represents a pascal converter
     /// </summary>
     public class PascalCaseConverter : ICaseConverter
     {
@@ -16,13 +16,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to pascal case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-
-            var result = text.ToTitleCase();
-            return result.ToString().Replace(" ", "");
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty : 
+                text.ToTitleCase().Replace(" ", "");
         }
     }
 }
