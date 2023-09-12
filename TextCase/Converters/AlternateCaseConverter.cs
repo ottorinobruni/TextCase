@@ -5,8 +5,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a title converter
+    /// <summary>
+    /// Represents a title converter
     /// </summary>
     public class AlternateCaseConverter : ICaseConverter
     {
@@ -23,20 +23,21 @@ namespace TextCase.Converters
             }
 
             var builder = new StringBuilder();
-            var isFirst = true;
+            var isUpper = true;
 
-            for (int i = 0; i < text.Length; i++)
+            foreach (var c in text)
             {
-                if (!String.IsNullOrWhiteSpace(text[i].ToString()))
+                if (!char.IsWhiteSpace(c))
                 {
-                    builder.Append((isFirst) ? text[i].ToString().ToUpperInvariant() : text[i].ToString().ToLowerInvariant());
-                    isFirst = !isFirst;
+                    builder.Append(isUpper ? char.ToUpperInvariant(c) : char.ToLowerInvariant(c));
+                    isUpper = !isUpper;
                 }
                 else
                 {
                     builder.Append(' ');
                 }
             }
+
             return builder.ToString();
         }
     }
