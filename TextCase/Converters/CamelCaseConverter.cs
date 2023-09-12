@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a camel converter
+    /// <summary>
+    /// Represents a camel converter
     /// </summary>
     public class CamelCaseConverter : ICaseConverter
     {
@@ -21,18 +21,22 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var builder = new StringBuilder();
-            var words = text.Split(' ');
-            var isFirstTime = true;
-            foreach (var word in words)
+            var words = text.Split(new[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (words.Length == 0)
             {
-                if (!String.IsNullOrEmpty(word))
-                {
-                    builder.Append(isFirstTime ? word.ToLowerInvariant(): word.ToFirstLetterUpperCase());
-                    isFirstTime = false;
-                }
+                return string.Empty;
             }
-            return builder.ToString().Replace(" ", "");
+
+            var builder = new StringBuilder(words[0].ToLowerInvariant());
+
+            for (int i = 1; i < words.Length; i++)
+            {
+                builder.Append(words[i].ToFirstLetterUpperCase());
+            }
+
+            return builder.ToString();
         }
     }
+
 }
