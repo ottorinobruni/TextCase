@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text;
-using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a hashtag converter
+    /// <summary>
+    /// Represents a hashtag converter
     /// </summary>
     public class HashtagCaseConverter : ICaseConverter
     {
@@ -21,16 +20,23 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var builder = new StringBuilder();
-            var words = text.Split(' ');
-            foreach (var word in words)
+            var words = text.Split(new[] { ' ', '\t', '\n', '\r' }, 
+                StringSplitOptions.RemoveEmptyEntries);
+
+            if (words.Length == 0)
             {
-                if (!String.IsNullOrEmpty(word))
-                {
-                    builder.Append($"#{word} ");
-                }
+                return string.Empty;
             }
-            return builder.ToString().Trim();
+
+            var builder = new StringBuilder("#" + words[0]);
+
+            for (int i = 1; i < words.Length; i++)
+            {
+                builder.Append(" #" + words[i]);
+            }
+
+            return builder.ToString();
         }
     }
+
 }

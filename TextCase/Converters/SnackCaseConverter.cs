@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a snack converter
+    /// <summary>
+    /// Represents a snack converter
     /// </summary>
     public class SnackCaseConverter : ICaseConverter
     {
@@ -16,13 +16,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to snack case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-
-            var result = text.ToLowerInvariant();
-            return result.Replace(" ", "_");
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty : 
+                text.ToLowerInvariant().Replace(" ", "_");
         }
     }
 }

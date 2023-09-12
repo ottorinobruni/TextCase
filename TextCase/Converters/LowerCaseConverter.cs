@@ -1,8 +1,8 @@
 ﻿using System;
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a lowercase converter
+    /// <summary>
+    /// Represents a lowercase converter
     /// </summary>
     public class LowerCaseConverter : ICaseConverter
     {
@@ -13,11 +13,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to lowercase case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-            return text.ToLowerInvariant();
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty : 
+                text.ToLowerInvariant();
         }
     }
 }
