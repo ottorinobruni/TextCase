@@ -1,8 +1,8 @@
 ﻿using System;
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a reverse converter
+    /// <summary>
+    /// Represents a reverse converter
     /// </summary>
     public class ReverseCaseConverter : ICaseConverter
     {
@@ -17,6 +17,7 @@ namespace TextCase.Converters
             {
                 return string.Empty;
             }
+
             char[] charArray = text.ToCharArray();
             Array.Reverse(charArray);
             return new string(charArray);
