@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a title converter
+    /// <summary>
+    /// Represents a title converter
     /// </summary>
     public class TitleCaseConverter : ICaseConverter
     {
@@ -16,11 +16,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to title case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-            return text.ToTitleCase();
+            return string.IsNullOrEmpty(text) ? string.Empty : text.ToTitleCase();
         }
     }
 }
