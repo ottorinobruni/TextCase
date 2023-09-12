@@ -11,10 +11,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
+
     </PropertyGroup>
 
 
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
