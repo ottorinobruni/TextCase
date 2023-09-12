@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a capitalise converter
+    /// <summary>
+    /// Represents a capitalise converter
     /// </summary>
     public class CapitaliseCaseConverter : ICaseConverter
     {
@@ -16,11 +16,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to capitalise case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-            return text.Trim().ToFirstLetterUpperCase();
+            return string.IsNullOrEmpty(text) ?
+                string.Empty :
+                text.ToFirstLetterUpperCase();
         }
     }
 }
