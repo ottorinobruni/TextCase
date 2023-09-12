@@ -16,7 +16,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to snack case.</returns>
         public string Convert(string text)
         {
-            return string.IsNullOrEmpty(text) ? string.Empty : text.ToLowerInvariant().Replace(" ", "_");
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty : 
+                text.ToLowerInvariant().Replace(" ", "_");
         }
     }
 }

@@ -13,7 +13,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to uppercase case.</returns>
         public string Convert(string text)
         {
-            return string.IsNullOrEmpty(text) ? string.Empty : text.ToUpperInvariant();
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty : 
+                text.ToUpperInvariant();
         }
     }
 }
