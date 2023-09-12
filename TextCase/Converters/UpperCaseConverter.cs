@@ -1,8 +1,8 @@
 ﻿using System;
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a uppercase converter
+    /// <summary>
+    /// Represents a uppercase converter
     /// </summary>
     public class UpperCaseConverter : ICaseConverter
     {
@@ -13,11 +13,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to uppercase case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-            return text.ToUpperInvariant();
+            return string.IsNullOrEmpty(text) ? string.Empty : text.ToUpperInvariant();
         }
     }
 }
