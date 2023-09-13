@@ -137,5 +137,15 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.ReverseCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to alternate case.
+        /// </summary>
+        /// <param name="value">The string to convert to alternate case.</param>
+        /// <returns>The specified text converted to alternate case.</returns>
+        public static string ToAlternateCase(this string value)
+        {
+            return TextCase.Convert(value, Case.AlternateCase);
+        }
     }
 }
