@@ -9,9 +9,11 @@ namespace TextCase.Extensions
     {
         internal static string ToFirstLetterUpperCase(this string value)
         {
-            var firstPart = value.Trim().Substring(0, 1).ToUpperInvariant();
-            var secondPart = value.Trim().Length > 1 ? value.Trim()[1..].ToLowerInvariant() : "";
-            return String.Format("{0}{1}", firstPart, secondPart);
+            if (string.IsNullOrWhiteSpace(value))
+                return value;
+
+            value = value.Trim();
+            return char.ToUpperInvariant(value[0]) + value.Substring(1).ToLowerInvariant();
         }
 
         internal static string ToTitleCase(this string value)
@@ -26,11 +28,7 @@ namespace TextCase.Extensions
         /// <returns>The number of characters in the current string.</returns>
         internal static int GetTextCount(this string value)
         {
-            if (string.IsNullOrEmpty(value))
-            {
-                return 0;
-            }
-            return value.Length;
+            return value?.Length ?? 0;
         }
 
         /// <summary>
@@ -40,13 +38,13 @@ namespace TextCase.Extensions
         /// <returns>The number of words in the current string.</returns>
         internal static int GetWordsCount(this string value)
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 return 0;
             }
-            return Regex.Replace(value, "[^a-zA-Z0-9_]+", " ")
-                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                .Length;
+
+            var words = value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            return words.Length;
         }
 
         /// <summary>
@@ -56,10 +54,11 @@ namespace TextCase.Extensions
         /// <returns>The number of letters in the current string.</returns>
         internal static int GetLettersCount(this string value)
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 return 0;
             }
+
             return value.Count(char.IsLetter);
         }
 
@@ -70,11 +69,18 @@ namespace TextCase.Extensions
         /// <returns>The number of sentences in the current string.</returns>
         internal static int GetSentencesCount(this string value)
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 return 0;
             }
-            return value.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Length;
+
+            // Split sentences based on common sentence-ending punctuation marks.
+            var sentenceSeparators = new char[] { '.', '!', '?' };
+            var sentences = value.Split(sentenceSeparators, StringSplitOptions.RemoveEmptyEntries)
+                .Where(sentence => !string.IsNullOrWhiteSpace(sentence))
+                .ToArray();
+
+            return sentences.Length;
         }
 
     }
