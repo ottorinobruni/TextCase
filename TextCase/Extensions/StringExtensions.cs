@@ -147,5 +147,25 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.AlternateCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to camel case.
+        /// </summary>
+        /// <param name="value">The string to convert to camel case.</param>
+        /// <returns>The specified text converted to camel case.</returns>
+        public static string ToCamelCase(this string value)
+        {
+            return TextCase.Convert(value, Case.CamelCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to pascal case.
+        /// </summary>
+        /// <param name="value">The string to convert to pascal case.</param>
+        /// <returns>The specified text converted to pascal case.</returns>
+        public static string ToPascalCase(this string value)
+        {
+            return TextCase.Convert(value, Case.PascalCase);
+        }
     }
 }
