@@ -107,5 +107,25 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.TitleCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to capitalise case.
+        /// </summary>
+        /// <param name="value">The string to convert to capitalise case.</param>
+        /// <returns>The specified text converted to capitalise case.</returns>
+        public static string ToCapitaliseCase(this string value)
+        {
+            return TextCase.Convert(value, Case.CapitaliseCase);
+        }
+        
+        /// <summary>
+        /// Converts the specified text to capitalise words case.
+        /// </summary>
+        /// <param name="value">The string to convert to capitalise words case.</param>
+        /// <returns>The specified text converted to capitalise words case.</returns>
+        public static string ToCapitaliseWordsCase(this string value)
+        {
+            return TextCase.Convert(value, Case.CapitaliseWordsCase);
+        }
     }
 }
