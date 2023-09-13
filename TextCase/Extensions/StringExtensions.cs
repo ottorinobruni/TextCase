@@ -93,5 +93,15 @@ namespace TextCase.Extensions
             return TextCase.Convert(value, Case.UpperCase);
         }
 
+        /// <summary>
+        /// Converts the specified string to lowercase using the casing rules of the invariant culture.
+        /// </summary>
+        /// <param name="value">The string to convert to lowercase case.</param>
+        /// <returns>The specified text converted to lowercase case.</returns>
+        public static string ToLowerCase(this string value)
+        {
+            return TextCase.Convert(value, Case.LowerCase);
+        }
+
     }
 }
