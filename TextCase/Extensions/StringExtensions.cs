@@ -21,7 +21,7 @@ namespace TextCase.Extensions
         /// </summary>
         /// <param name="value">The string to count.</param>
         /// <returns>The number of characters in the current string.</returns>
-        internal static int GetTextCount(this string value)
+        public static int GetTextCount(this string value)
         {
             return value?.Length ?? 0;
         }
@@ -31,7 +31,7 @@ namespace TextCase.Extensions
         /// </summary>
         /// <param name="value">The string to count.</param>
         /// <returns>The number of words in the current string.</returns>
-        internal static int GetWordsCount(this string value)
+        public static int GetWordsCount(this string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -47,7 +47,7 @@ namespace TextCase.Extensions
         /// </summary>
         /// <param name="value">The string to count.</param>
         /// <returns>The number of letters in the current string.</returns>
-        internal static int GetLettersCount(this string value)
+        public static int GetLettersCount(this string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -62,7 +62,7 @@ namespace TextCase.Extensions
         /// </summary>
         /// <param name="value">The string to count.</param>
         /// <returns>The number of sentences in the current string.</returns>
-        internal static int GetSentencesCount(this string value)
+        public static int GetSentencesCount(this string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
