@@ -76,16 +76,19 @@ TextCase.Convert("You talking to me?", Case.SnackCase);
 TextCase.Convert("You talking to me?", Case.HashtagCase);   
 "You talking to me?".ToHashtagCase();
 
-// Text, Words, Letters and Sentences Count
+// Text Count
 TextCase.GetTextCount("You talking to me?");  
 "You talking to me?".GetTextCount();  
 
+// Words Count
 TextCase.GetWordsCount("You talking to me?");
 "You talking to me?".GetWordsCount();
 
+// Letters Count
 TextCase.GetLettersCount("You talking to me?");
 "You talking to me?".GetLettersCount();
 
+// Sentences Count
 TextCase.GetSentencesCount("You talking to me?");
 "You talking to me?".GetSentencesCount();
 ```
