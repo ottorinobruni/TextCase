@@ -187,5 +187,15 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.SnackCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to hashtag case.
+        /// </summary>
+        /// <param name="value">The string to convert to hashtag case.</param>
+        /// <returns>The specified text converted to hashtag case.</returns>
+        public static string ToHashtagCase(this string value)
+        {
+            return TextCase.Convert(value, Case.HashtagCase);
+        }
     }
 }
