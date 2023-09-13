@@ -15,12 +15,7 @@ namespace TextCase.Extensions
             value = value.Trim();
             return char.ToUpperInvariant(value[0]) + value.Substring(1).ToLowerInvariant();
         }
-
-        internal static string ToTitleCase(this string value)
-        {
-            return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(value);
-        }
-
+        
         /// <summary>
         /// Gets the number of characters in the current String value.
         /// </summary>
@@ -103,5 +98,14 @@ namespace TextCase.Extensions
             return TextCase.Convert(value, Case.LowerCase);
         }
 
+        /// <summary>
+        /// Converts the specified text to title case.
+        /// </summary>
+        /// <param name="value">The string to convert to title case.</param>
+        /// <returns>The specified text converted to title case.</returns>
+        public static string ToTitleCase(this string value)
+        {
+            return TextCase.Convert(value, Case.TitleCase);
+        }
     }
 }

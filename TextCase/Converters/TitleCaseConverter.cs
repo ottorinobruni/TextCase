@@ -17,8 +17,8 @@ namespace TextCase.Converters
         public string Convert(string text)
         {
             return string.IsNullOrEmpty(text) ? 
-                string.Empty : 
-                text.ToTitleCase();
+                string.Empty :
+                CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text);
         }
     }
 }
