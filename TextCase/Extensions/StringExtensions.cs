@@ -167,5 +167,25 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.PascalCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to kebab case.
+        /// </summary>
+        /// <param name="value">The string to convert to kebab case.</param>
+        /// <returns>The specified text converted to kebab case.</returns>
+        public static string ToKebabCase(this string value)
+        {
+            return TextCase.Convert(value, Case.KebabCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to snack case.
+        /// </summary>
+        /// <param name="value">The string to convert to snack case.</param>
+        /// <returns>The specified text converted to snack case.</returns>
+        public static string ToSnackCase(this string value)
+        {
+            return TextCase.Convert(value, Case.SnackCase);
+        }
     }
 }
