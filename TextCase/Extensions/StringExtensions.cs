@@ -82,6 +82,16 @@ namespace TextCase.Extensions
 
             return sentences.Length;
         }
+        
+        /// <summary>
+        /// Converts the specified string to uppercase using the casing rules of the invariant culture.
+        /// </summary>
+        /// <param name="value">The string to convert to uppercase case.</param>
+        /// <returns>The specified text converted to uppercase case.</returns>
+        public static string ToUpperCase(this string value)
+        {
+            return TextCase.Convert(value, Case.UpperCase);
+        }
 
     }
 }
