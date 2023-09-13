@@ -127,5 +127,15 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.CapitaliseWordsCase);
         }
+
+        /// <summary>
+        /// Converts the specified string to reverse case
+        /// </summary>
+        /// <param name="value">The string to convert to reverse case.</param>
+        /// <returns>The specified text converted to reverse case.</returns>
+        public static string ToReverseCase(this string value)
+        {
+            return TextCase.Convert(value, Case.ReverseCase);
+        }
     }
 }
