@@ -16,10 +16,9 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to title case.</returns>
         public string Convert(string text)
         {
-
-            return string.IsNullOrWhiteSpace(text) ? 
-                string.Empty : 
-                text.ToTitleCase();
+            return string.IsNullOrEmpty(text) ? 
+                string.Empty :
+                CultureInfo.InvariantCulture.TextInfo.ToTitleCase(text);
         }
     }
 }
