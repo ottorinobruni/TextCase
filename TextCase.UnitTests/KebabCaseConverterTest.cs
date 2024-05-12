@@ -9,7 +9,14 @@ namespace TextCase.UnitTests
         [Theory]
         [InlineData("hello world", "hello-world")]
         [InlineData("icH bIn glückLICH", "ich-bin-glücklich")]
-        [InlineData(" che ore sono? ", "-che-ore-sono?-")]
+        [InlineData(" che ore sono? ", "che-ore-sono")]
+        [InlineData("HELLO\tWORLD", "hello-world")]
+        [InlineData("Hello\nWorld", "hello-world")]
+        [InlineData("  Hello  World  ", "hello-world")]
+        [InlineData("", "")]
+        [InlineData(" ", "")]
+        [InlineData("\t", "")]
+        [InlineData("\n", "")]
         public void Convert_WhenKebabCase_TextShouldBeKebabCase(string input, string output)
         {
             // Setup

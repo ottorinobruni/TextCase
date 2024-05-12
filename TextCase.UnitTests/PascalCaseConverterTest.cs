@@ -10,6 +10,10 @@ namespace TextCase.UnitTests
         [InlineData("hello world", "HelloWorld")]
         [InlineData("icH bIn glückLICH", "IchBinGlücklich")]
         [InlineData("  che ore sono? ", "CheOreSono?")]
+        [InlineData("iPhone", "Iphone")]
+        [InlineData("  Hello  World  ", "HelloWorld")]
+        [InlineData("hello\tworld", "HelloWorld")]
+        [InlineData("Hello\nWorld", "HelloWorld")]
         public void Convert_WhenPascalCase_TextShouldBePascalCase(string input, string output)
         {
             // Setup

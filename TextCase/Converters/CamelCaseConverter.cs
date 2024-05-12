@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using TextCase.Extensions;
 
@@ -16,7 +17,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to camel case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 return string.Empty;
             }
@@ -32,7 +33,7 @@ namespace TextCase.Converters
 
             for (int i = 1; i < words.Length; i++)
             {
-                builder.Append(words[i].ToFirstLetterUpperCase());
+                builder.Append(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(words[i].ToLowerInvariant()));
             }
 
             return builder.ToString();

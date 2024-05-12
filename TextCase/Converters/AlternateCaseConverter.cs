@@ -27,14 +27,10 @@ namespace TextCase.Converters
 
             foreach (var c in text)
             {
+                builder.Append(isUpper ? char.ToUpperInvariant(c) : char.ToLowerInvariant(c));
                 if (!char.IsWhiteSpace(c))
                 {
-                    builder.Append(isUpper ? char.ToUpperInvariant(c) : char.ToLowerInvariant(c));
                     isUpper = !isUpper;
-                }
-                else
-                {
-                    builder.Append(' ');
                 }
             }
 

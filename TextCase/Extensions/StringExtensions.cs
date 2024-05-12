@@ -9,8 +9,9 @@ namespace TextCase.Extensions
     {
         internal static string ToFirstLetterUpperCase(this string value)
         {
-            var firstPart = value.Trim().Substring(0, 1).ToUpperInvariant();
-            var secondPart = value.Trim().Length > 1 ? value.Trim()[1..].ToLowerInvariant() : "";
+            var trimmedValue = value.Trim();
+            var firstPart = trimmedValue.Substring(0, 1).ToUpperInvariant();
+            var secondPart = trimmedValue.Length > 1 ? trimmedValue[1..].ToLowerInvariant() : "";
             return String.Format("{0}{1}", firstPart, secondPart);
         }
 
@@ -40,13 +41,7 @@ namespace TextCase.Extensions
         /// <returns>The number of words in the current string.</returns>
         internal static int GetWordsCount(this string value)
         {
-            if (string.IsNullOrEmpty(value))
-            {
-                return 0;
-            }
-            return Regex.Replace(value, "[^a-zA-Z0-9_]+", " ")
-                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                .Length;
+            return string.IsNullOrEmpty(value) ? 0 : value.Split(new[] { ' ', '\t', '\n', '\r', '.', ',', ';', '!', '?' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
         /// <summary>

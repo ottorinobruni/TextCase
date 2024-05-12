@@ -24,7 +24,7 @@ namespace TextCase.UnitTests
         [Theory]
         [InlineData("", 0)]
         [InlineData("hello world", 2)]
-        [InlineData("icH bIn glückLICH", 4)]
+        [InlineData("icH bIn glückLICH", 3)]
         [InlineData(" che ore sono? ", 3)]
         public void GetWordsCount_WhenInput_WordsShouldBeCount(string input, int count)
         {

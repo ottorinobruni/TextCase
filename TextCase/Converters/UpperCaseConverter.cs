@@ -13,7 +13,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to uppercase case.</returns>
         public string Convert(string text)
         {
-            return string.IsNullOrEmpty(text) ? 
+            return string.IsNullOrWhiteSpace(text) ? 
                 string.Empty : 
                 text.ToUpperInvariant();
         }
