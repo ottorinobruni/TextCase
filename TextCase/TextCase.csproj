@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PackageId>TextCase</PackageId>
-      <Version>1.0.5</Version>
+      <Version>1.0.6</Version>
       <Authors>Ottorino Bruni</Authors>
       <Description>The TextCase library for .NET helps changing the cases of existing texts.</Description>
      <GeneratePackageOnBuild>true</GeneratePackageOnBuild> 

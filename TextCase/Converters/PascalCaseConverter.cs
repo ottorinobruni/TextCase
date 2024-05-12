@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using TextCase.Extensions;
 
@@ -16,9 +17,13 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to pascal case.</returns>
         public string Convert(string text)
         {
-            return string.IsNullOrEmpty(text) ? 
-                string.Empty : 
-                text.ToTitleCase().Replace(" ", "");
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return string.Empty;
+            }
+
+            text = text.Replace("\n", " ").Replace("\t", " ");
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLowerInvariant()).Replace(" ", "");
         }
     }
 }

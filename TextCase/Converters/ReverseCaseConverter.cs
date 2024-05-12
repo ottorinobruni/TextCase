@@ -13,7 +13,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to reverse case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 return string.Empty;
             }

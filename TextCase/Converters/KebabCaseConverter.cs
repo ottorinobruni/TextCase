@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using TextCase.Extensions;
 
 namespace TextCase.Converters
@@ -15,10 +16,15 @@ namespace TextCase.Converters
         /// <param name="text">The string to convert to kebab case.</param>
         /// <returns>The specified text converted to kebab case.</returns>
         public string Convert(string text)
-        {
-            return string.IsNullOrEmpty(text) ?
-                string.Empty :
-                text.ToLowerInvariant().Replace(" ", "-");
+        {   
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return string.Empty;
+            }
+
+            var regex = new Regex(@"[\s\W]+");
+            var result = regex.Replace(text.Trim().ToLowerInvariant(), "-");
+            return result.Trim('-');
         }
     }
 }

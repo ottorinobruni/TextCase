@@ -4,8 +4,8 @@ using TextCase.Extensions;
 
 namespace TextCase.Converters
 {
-    // <summary>
-    //// Represents a capitalise converter
+    /// <summary>
+    /// Represents a converter that capitalises the first letter of each word in a string.
     /// </summary>
     public class CapitaliseWordsCaseConverter : ICaseConverter
     {
@@ -16,7 +16,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to capitalise words case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 return string.Empty;
             }

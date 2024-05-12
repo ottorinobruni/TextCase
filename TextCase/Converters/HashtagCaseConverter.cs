@@ -15,7 +15,7 @@ namespace TextCase.Converters
         /// <returns>The specified text converted to hashtag case.</returns>
         public string Convert(string text)
         {
-            if (string.IsNullOrEmpty(text))
+            if (string.IsNullOrWhiteSpace(text))
             {
                 return string.Empty;
             }
@@ -28,14 +28,7 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var builder = new StringBuilder("#" + words[0]);
-
-            for (int i = 1; i < words.Length; i++)
-            {
-                builder.Append(" #" + words[i]);
-            }
-
-            return builder.ToString();
+            return "#" + string.Join(" #", words);
         }
     }
 
