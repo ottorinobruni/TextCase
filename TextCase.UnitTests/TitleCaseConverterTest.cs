@@ -1,5 +1,6 @@
 using System;
 using TextCase.Converters;
+using TextCase.Extensions;
 using Xunit;
 
 namespace TextCase.UnitTests
@@ -18,6 +19,22 @@ namespace TextCase.UnitTests
 
             // Execute
             var convertedText = service.Convert(input);
+
+            // Assert
+            var expected = output;
+            var actual = convertedText;
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData("hello world", "Hello World")]
+        [InlineData("icH bIn glückLICH", "Ich Bin Glücklich")]
+        [InlineData("  che ore sono? ", "  Che Ore Sono? ")]
+        [InlineData("UNICEF and children", "UNICEF And Children")]
+        public void ToTitleCase_WhenTitleCase_TextShouldBeTitleCase(string input, string output)
+        {
+            // Execute
+            var convertedText = input.ToTitleCase();
 
             // Assert
             var expected = output;

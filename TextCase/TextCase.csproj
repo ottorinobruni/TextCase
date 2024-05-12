@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -10,10 +10,13 @@
     <RepositoryUrl>https://github.com/ottorinobruni/TextCase</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+
     </PropertyGroup>
 
 
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
