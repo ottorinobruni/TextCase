@@ -5,13 +5,13 @@ using Xunit;
 
 namespace TextCase.UnitTests
 {
-    public class CapitaliseWordsCaseConverterTest
+    public class CapitalizeWordsCaseConverterTest
     {
         [Theory]
         [InlineData("Hello World", "Hello World")]
         [InlineData("ICH BIN GLÜCKLICH", "Ich Bin Glücklich")]
         [InlineData("  che ore SONO? ", "  Che Ore Sono? ")]
-        public void Convert_WhenCapitaliseCase_TextShouldBeCapitaliseCase(string input, string output)
+        public void Convert_WhenCapitalizeCase_TextShouldBeCapitalizeCase(string input, string output)
         {
             // Setup
             var service = new CapitaliseWordsCaseConverter();
@@ -29,10 +29,10 @@ namespace TextCase.UnitTests
         [InlineData("Hello World", "Hello World")]
         [InlineData("ICH BIN GLÜCKLICH", "Ich Bin Glücklich")]
         [InlineData("  che ore SONO? ", "  Che Ore Sono? ")]
-        public void ToCapitaliseWordsCase_WhenCapitaliseCase_TextShouldBeCapitaliseCase(string input, string output)
+        public void ToCapitalizeWordsCase_WhenCapitalizeCase_TextShouldBeCapitalizeCase(string input, string output)
         {
             // Execute
-            var convertedText = input.ToCapitaliseWordsCase();
+            var convertedText = input.ToCapitalizeWordsCase();
 
             // Assert
             var expected = output;

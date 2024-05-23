@@ -22,7 +22,7 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var words = text.Split(new[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            var words = text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (words.Length == 0)
             {

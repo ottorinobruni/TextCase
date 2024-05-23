@@ -103,23 +103,23 @@ namespace TextCase.Extensions
         }
 
         /// <summary>
-        /// Converts the specified text to capitalise case.
+        /// Converts the specified text to capitalize case.
         /// </summary>
-        /// <param name="value">The string to convert to capitalise case.</param>
-        /// <returns>The specified text converted to capitalise case.</returns>
-        public static string ToCapitaliseCase(this string value)
+        /// <param name="value">The string to convert to capitalize case.</param>
+        /// <returns>The specified text converted to capitalize case.</returns>
+        public static string ToCapitalizeCase(this string value)
         {
-            return TextCase.Convert(value, Case.CapitaliseCase);
+            return TextCase.Convert(value, Case.CapitalizeCase);
         }
-        
+
         /// <summary>
-        /// Converts the specified text to capitalise words case.
+        /// Converts the specified text to capitalize words case.
         /// </summary>
-        /// <param name="value">The string to convert to capitalise words case.</param>
-        /// <returns>The specified text converted to capitalise words case.</returns>
-        public static string ToCapitaliseWordsCase(this string value)
+        /// <param name="value">The string to convert to capitalize words case.</param>
+        /// <returns>The specified text converted to capitalize words case.</returns>
+        public static string ToCapitalizeWordsCase(this string value)
         {
-            return TextCase.Convert(value, Case.CapitaliseWordsCase);
+            return TextCase.Convert(value, Case.CapitalizeWordsCase);
         }
 
         /// <summary>
@@ -187,9 +187,49 @@ namespace TextCase.Extensions
         /// </summary>
         /// <param name="value">The string to convert to hashtag case.</param>
         /// <returns>The specified text converted to hashtag case.</returns>
-        public static string ToHashtagCase(this string value)
+        public static string ToHashTagCase(this string value)
         {
-            return TextCase.Convert(value, Case.HashtagCase);
+            return TextCase.Convert(value, Case.HashTagCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to constant case.
+        /// </summary>
+        /// <param name="value">The string to convert to constant case.</param>
+        /// <returns>The specified text converted to constant case.</returns>
+        public static string ToConstantCase(this string value)
+        {
+            return TextCase.Convert(value, Case.ConstantCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to cobol case.
+        /// </summary>
+        /// <param name="value">The string to convert to cobol case.</param>
+        /// <returns>The specified text converted to cobol case.</returns>
+        public static string ToCobolCase(this string value)
+        {
+            return TextCase.Convert(value, Case.CobolCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to inverse case.
+        /// </summary>
+        /// <param name="value">The string to convert to inverse case.</param>
+        /// <returns>The specified text converted to inverse case.</returns>
+        public static string ToInverseCase(this string value)
+        {
+            return TextCase.Convert(value, Case.InverseCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to train case.
+        /// </summary>
+        /// <param name="value">The string to convert to train case.</param>
+        /// <returns>The specified text converted to train case.</returns>
+        public static string ToTrainCase(this string value)
+        {
+            return TextCase.Convert(value, Case.TrainCase);
         }
     }
 }

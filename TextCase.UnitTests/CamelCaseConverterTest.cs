@@ -11,6 +11,7 @@ namespace TextCase.UnitTests
         [InlineData("hello world", "helloWorld")]
         [InlineData("icH bIn glückLICH", "ichBinGlücklich")]
         [InlineData("  che ore sono? ", "cheOreSono?")]
+        [InlineData("Enter \"your text here...root = true\n\n[*.{csproj,props,targets}]\"", "enter\"YourTextHere...Root=True\n\n[*.{Csproj,Props,Targets}]\"")]
         public void Convert_WhenCamelCase_TextShouldBeCamelCase(string input, string output)
         {
             // Setup
@@ -29,6 +30,7 @@ namespace TextCase.UnitTests
         [InlineData("hello world", "helloWorld")]
         [InlineData("icH bIn glückLICH", "ichBinGlücklich")]
         [InlineData("  che ore sono? ", "cheOreSono?")]
+        [InlineData("Enter \"your text here...root = true\n\n[*.{csproj,props,targets}]\"", "enter\"YourTextHere...Root=True\n\n[*.{Csproj,Props,Targets}]\"")]
         public void ToCamelCase_WhenCamelCase_TextShouldBeCamelCase(string input, string output)
         {
             // Execute

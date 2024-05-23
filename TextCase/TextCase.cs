@@ -9,15 +9,19 @@ namespace TextCase
         UpperCase,
         LowerCase,
         TitleCase,
-        CapitaliseCase,
-        CapitaliseWordsCase,
+        CapitalizeCase,
+        CapitalizeWordsCase,
         ReverseCase,
         AlternateCase,
         CamelCase,
         PascalCase,
         KebabCase,
         SnackCase,
-        HashtagCase
+        HashTagCase,
+        ConstantCase,
+        CobolCase,
+        TrainCase,
+        InverseCase
     }
 
     public static class TextCase
