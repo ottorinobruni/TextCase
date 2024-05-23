@@ -14,7 +14,7 @@ namespace TextCase.UnitTests
         [InlineData("iPhone", "Iphone")]
         [InlineData("  Hello  World  ", "HelloWorld")]
         [InlineData("hello\tworld", "HelloWorld")]
-        [InlineData("Hello\nWorld", "HelloWorld")]
+        [InlineData("Today i am happy\nToday i am happy", "TodayIAmHappy\nTodayIAmHappy")]
         public void Convert_WhenPascalCase_TextShouldBePascalCase(string input, string output)
         {
             // Setup
@@ -36,7 +36,7 @@ namespace TextCase.UnitTests
         [InlineData("iPhone", "Iphone")]
         [InlineData("  Hello  World  ", "HelloWorld")]
         [InlineData("hello\tworld", "HelloWorld")]
-        [InlineData("Hello\nWorld", "HelloWorld")]
+        [InlineData("Today i am happy\nToday i am happy", "TodayIAmHappy\nTodayIAmHappy")]
         public void ToPascalCase_WhenUpperCase_TextShouldBePascalCase(string input, string output)
         {
             // Execute

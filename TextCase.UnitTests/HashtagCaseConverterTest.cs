@@ -11,6 +11,7 @@ namespace TextCase.UnitTests
         [InlineData("hello world", "#hello #world")]
         [InlineData("icH bIn glückLICH", "#icH #bIn #glückLICH")]
         [InlineData(" che ore sono? ", "#che #ore #sono?")]
+        [InlineData("Today i am happy\nToday i am happy", "#Today #i #am #happy\n#Today #i #am #happy")]
         public void Convert_WhenHashTagCase_TextShouldBeHashTagCase(string input, string output)
         {
             // Setup
@@ -29,6 +30,7 @@ namespace TextCase.UnitTests
         [InlineData("hello world", "#hello #world")]
         [InlineData("icH bIn glückLICH", "#icH #bIn #glückLICH")]
         [InlineData(" che ore sono? ", "#che #ore #sono?")]
+        [InlineData("Today i am happy\nToday i am happy", "#Today #i #am #happy\n#Today #i #am #happy")]
         public void ToHashTagCase_WhenHashTagCase_TextShouldBeHashTagCase(string input, string output)
         {
             // Execute
