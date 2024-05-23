@@ -3,25 +3,30 @@
 [![NuGet](https://img.shields.io/nuget/v/TextCase.svg?style=flat-square)](https://www.nuget.org/packages/TextCase)
 [![Nuget](https://img.shields.io/nuget/dt/TextCase)](https://www.nuget.org/packages/TextCase)
 
-The TextCase library for .NET helps changing the cases of existing texts.
+TextCase is a powerful .NET library designed to simplify text manipulation by providing a variety of case conversion methods.
 
-There are the cases currently available:
-- UpperCase
-- LowerCase
-- TitleCase
-- CapitaliseCase
-- CapitaliseWordsCase
-- ReverseCase
-- AlternateCase
-- CamelCase
-- PascalCase
-- KebabCase
-- SnackCase
-- HashTagCase
-- ConstantCase
-- CobolCase
-- InverseCase
-- TrainCase
+Key Features
+- Wide Range of Conversions: Transform text into 17 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, and more.
+- Text Analysis: Easily count characters, words, letters, and sentences within your text.
+- Easy Integration: Simple and intuitive API that integrates seamlessly with your .NET applications.
+
+Available Conversions
+- UpperCase: Converts text to uppercase.
+- LowerCase: Converts text to lowercase.
+- TitleCase: Capitalizes the first letter of each word.
+- CamelCase: Converts text to camelCase.
+- PascalCase: Converts text to PascalCase.
+- KebabCase: Converts text to kebab-case.
+- SnackCase: Converts text to snack_case.
+- HashTagCase: Converts text to #HashTagCase.
+- ConstantCase: Converts text to CONSTANT_CASE.
+- CobolCase: Converts text to COBOL-CASE.
+- InverseCase: Alternates case starting with lowercase.
+- TrainCase: Converts text to Train-Case.
+- CapitaliseCase: Capitalizes the first letter of the text.
+- CapitaliseWordsCase: Capitalizes the first letter of each word.
+- ReverseCase: Reverses the text.
+- AlternateCase: Alternates case starting with uppercase.
 
 It's possible to count in the text:
 - number of characters
