@@ -22,7 +22,7 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            text = text.Replace("\n", " ").Replace("\t", " ");
+            text = text.Replace("\t", " ");
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLowerInvariant()).Replace(" ", "");
         }
     }

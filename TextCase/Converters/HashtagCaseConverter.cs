@@ -20,15 +20,17 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var words = text.Split(new[] { ' ', '\t', '\n', '\r' }, 
-                StringSplitOptions.RemoveEmptyEntries);
-
-            if (words.Length == 0)
+            var lines = text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < lines.Length; i++)
             {
-                return string.Empty;
+                var words = lines[i].Split(new[] { ' ', '\t', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                if (words.Length > 0)
+                {
+                    lines[i] = "#" + string.Join(" #", words);
+                }
             }
 
-            return "#" + string.Join(" #", words);
+            return string.Join("\n", lines);
         }
     }
 
