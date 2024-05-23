@@ -20,8 +20,8 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            // Replace one or more consecutive non-alphanumeric characters (except newlines) with a single dash
-            var replacedPunctuation = Regex.Replace(text, @"[^\w\n]+", "-");
+            // Replace one or more consecutive non-letter, non-digit, non-newline characters with a single dash
+            var replacedPunctuation = Regex.Replace(text, @"[^\p{L}0-9\n]+", "-");
 
             // Split the text into lines
             var lines = replacedPunctuation.Split('\n');
