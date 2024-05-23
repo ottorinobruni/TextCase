@@ -17,7 +17,11 @@ There are the cases currently available:
 - PascalCase
 - KebabCase
 - SnackCase
-- HashtagCase
+- HashTagCase
+- ConstantCase
+- CobolCase
+- InverseCase
+- TrainCase
 
 It's possible to count in the text:
 - number of characters
@@ -73,8 +77,24 @@ TextCase.Convert("You talking to me?", Case.SnackCase);
 "You talking to me?".ToSnackCase();
 
 // #You #talking #to #me?
-TextCase.Convert("You talking to me?", Case.HashtagCase);   
-"You talking to me?".ToHashtagCase();
+TextCase.Convert("You talking to me?", Case.HashTagCase);   
+"You talking to me?".ToHashTagCase();
+
+// YOU_TALKING_TO_ME
+TextCase.Convert("You talking to me?", Case.ConstantCase);   
+"You talking to me?".ToConstantCase();
+
+// YOU-TALKING-TO-ME
+TextCase.Convert("You talking to me?", Case.CobolCase);   
+"You talking to me?".ToCobolCase();
+
+// yOu TaLkInG tO mE?
+TextCase.Convert("You talking to me?", Case.InverseCase);   
+"You talking to me?".ToInverseCase();
+
+// You-Talking-To-Me
+TextCase.Convert("You talking to me?", Case.TrainCase);   
+"You talking to me?".ToTrainCase();
 
 // Text Count
 TextCase.GetTextCount("You talking to me?");  

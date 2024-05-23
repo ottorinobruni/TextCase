@@ -29,10 +29,10 @@ namespace TextCase.UnitTests
         [InlineData("Hello World", "Hello world")]
         [InlineData("ICH BIN GLÜCKLICH", "Ich bin glücklich")]
         [InlineData("  che ore SONO? ", "Che ore sono?")]
-        public void ToCapitaliseCase_WhenCapitaliseCase_TextShouldBeCapitaliseCase(string input, string output)
+        public void ToCapitalizeCase_WhenCapitalizeCase_TextShouldBeCapitalizeCase(string input, string output)
         {
             // Execute
-            var convertedText = input.ToCapitaliseCase();
+            var convertedText = input.ToCapitalizeCase();
 
             // Assert
             var expected = output;
