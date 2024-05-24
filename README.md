@@ -30,13 +30,14 @@ Available Conversions
 - Base64EncodeCase: Encodes text to Base64.
 - Base64DecodeCase: Decodes Base64 text.
 
-It's possible to count in the text:
+Text Analysis Examples:
 - number of characters
 - number of words
 - number of letters
 - number of sentences
+- number of paragraphs
 
-## Usage:
+## Usage Examples:
 
 ```cscharp
 // YOU TALKING TO ME?
@@ -110,7 +111,10 @@ TextCase.Convert("You talking to me?", Case.Base64EncodeCase);
 // Decode Base64 text
 TextCase.Convert("WW91IHRhbGtpbmcgdG8gbWU/", Case.Base64DecodeCase);
 "WW91IHRhbGtpbmcgdG8gbWU?".ToBase64DecodeCase();
+```
+Text Analysis Functions
 
+```cscharp
 // Text Count
 TextCase.GetTextCount("You talking to me?");  
 "You talking to me?".GetTextCount();  
@@ -126,6 +130,10 @@ TextCase.GetLettersCount("You talking to me?");
 // Sentences Count
 TextCase.GetSentencesCount("You talking to me?");
 "You talking to me?".GetSentencesCount();
+
+// Paragraphs Count
+TextCase.GetParagraphsCount("You talking to me?");
+"You talking to me?".GetParagraphsCount();
 
 ```
 
