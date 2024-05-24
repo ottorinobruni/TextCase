@@ -231,5 +231,25 @@ namespace TextCase.Extensions
         {
             return TextCase.Convert(value, Case.TrainCase);
         }
+
+        /// <summary>
+        /// Converts the specified text to base64 decode case.
+        /// </summary>
+        /// <param name="value">The string to convert to base64 decode case.</param>
+        /// <returns>The specified text converted to base64 decode case.</returns>
+        public static string ToBase64DecodeCase(this string value)
+        {
+            return TextCase.Convert(value, Case.Base64DecodeCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to base64 encode case.
+        /// </summary>
+        /// <param name="value">The string to convert to base64 encode case.</param>
+        /// <returns>The specified text converted to base64 encode case.</returns>
+        public static string ToBase64EncodeCase(this string value)
+        {
+            return TextCase.Convert(value, Case.Base64EncodeCase);
+        }
     }
 }

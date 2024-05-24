@@ -25,6 +25,8 @@ namespace TextCase
                 Case.CobolCase => new CobolCaseConverter(),
                 Case.TrainCase => new TrainCaseConverter(),
                 Case.InverseCase => new InverseCaseConverter(),
+                Case.Base64DecodeCase => new Base64DecodeCaseConverter(),
+                Case.Base64EncodeCase => new Base64EncodeCaseConverter(),
                 _ => throw new ArgumentException("No valid TextCase"),
             };
         }

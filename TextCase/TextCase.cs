@@ -21,7 +21,9 @@ namespace TextCase
         ConstantCase,
         CobolCase,
         TrainCase,
-        InverseCase
+        InverseCase,
+        Base64EncodeCase,
+        Base64DecodeCase
     }
 
     public static class TextCase
