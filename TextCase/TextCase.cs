@@ -52,5 +52,10 @@ namespace TextCase
         {
             return text.GetSentencesCount();
         }
+
+        public static int GetParagraphsCount(string text)
+        {
+            return text.GetParagraphsCount();
+        }
     }
 }

@@ -55,8 +55,13 @@ namespace TextCase.UnitTests
 
         [Theory]
         [InlineData("", 0)]
-        [InlineData("hello world. icH bIn glückLICH", 2)]
-        [InlineData(" che ore sono? ", 1)]
+        [InlineData(null, 0)]
+        [InlineData("This is a single sentence.", 1)]
+        [InlineData("This is the first sentence. This is the second one! Is this the third? Yes, it is.", 4)]
+        [InlineData("First sentence.\nSecond sentence!\nThird sentence?", 3)]
+        [InlineData("First sentence.   Second sentence!  Third sentence?   ", 3)]
+        [InlineData("First sentence.Second sentence!Third sentence?", 3)]
+        [InlineData("This is a sentence with a Mr Smith. And here's another one! Finally, this is the last one?", 3)]
         public void GetSentencesCount_WhenInput_SentencesShouldBeCount(string input, int count)
         {
             // Execute
@@ -66,6 +71,24 @@ namespace TextCase.UnitTests
             var expected = count;
             var actual = result;
             Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData(null, 0)]
+        [InlineData("This is a single paragraph.", 1)]
+        [InlineData("This is the first paragraph.\n\nThis is the second paragraph.\n\nThis is the third paragraph.", 3)]
+        [InlineData("First paragraph.\r\n\r\nSecond paragraph.\r\n\r\nThird paragraph.", 3)]
+        [InlineData("First paragraph.  \n\n  Second paragraph!  \n\n  Third paragraph?  ", 3)]
+        [InlineData("First paragraph.\nSecond paragraph!  \n\nThird paragraph?", 2)]
+        [InlineData("First paragraph.\n\n\nSecond paragraph!\n\n\n\nThird paragraph?", 3)]
+        public void GetParagraphsCount_VariousInputs_ReturnsExpectedResult(string input, int expected)
+        {
+            // Act
+            int result = TextCase.GetParagraphsCount(input);
+
+            // Assert
+            Assert.Equal(expected, result);
         }
     }
 }
