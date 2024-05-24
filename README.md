@@ -6,7 +6,7 @@
 TextCase is a powerful .NET library designed to simplify text manipulation by providing a variety of case conversion methods.
 
 Key Features
-- Wide Range of Conversions: Transform text into 17 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, and more.
+- Wide Range of Conversions: Transform text into 19 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, Base64 encoding/decoding, and more.
 - Text Analysis: Easily count characters, words, letters, and sentences within your text.
 - Easy Integration: Simple and intuitive API that integrates seamlessly with your .NET applications.
 
@@ -27,6 +27,8 @@ Available Conversions
 - CapitaliseWordsCase: Capitalizes the first letter of each word.
 - ReverseCase: Reverses the text.
 - AlternateCase: Alternates case starting with uppercase.
+- Base64EncodeCase: Encodes text to Base64.
+- Base64DecodeCase: Decodes Base64 text.
 
 It's possible to count in the text:
 - number of characters
@@ -101,6 +103,14 @@ TextCase.Convert("You talking to me?", Case.InverseCase);
 TextCase.Convert("You talking to me?", Case.TrainCase);   
 "You talking to me?".ToTrainCase();
 
+// Encode text to Base64
+TextCase.Convert("You talking to me?", Case.Base64EncodeCase);
+"You talking to me?".ToBase64EncodeCase();
+
+// Decode Base64 text
+TextCase.Convert("WW91IHRhbGtpbmcgdG8gbWU/", Case.Base64DecodeCase);
+"WW91IHRhbGtpbmcgdG8gbWU?".ToBase64DecodeCase();
+
 // Text Count
 TextCase.GetTextCount("You talking to me?");  
 "You talking to me?".GetTextCount();  
@@ -116,6 +126,7 @@ TextCase.GetLettersCount("You talking to me?");
 // Sentences Count
 TextCase.GetSentencesCount("You talking to me?");
 "You talking to me?".GetSentencesCount();
+
 ```
 
 ## Get it on NuGet:
