@@ -33,7 +33,12 @@ namespace TextCase.Extensions
         /// <returns>The number of words in the current string.</returns>
         public static int GetWordsCount(this string value)
         {
-            return string.IsNullOrEmpty(value) ? 0 : value.Split(new[] { ' ', '\t', '\n', '\r', '.', ',', ';', '!', '?' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return 0;
+            }
+            var words = Regex.Matches(value, @"\b\w+\b");
+            return words.Count;
         }
 
         /// <summary>
@@ -63,15 +68,32 @@ namespace TextCase.Extensions
                 return 0;
             }
 
-            // Split sentences based on common sentence-ending punctuation marks.
-            var sentenceSeparators = new char[] { '.', '!', '?' };
-            var sentences = value.Split(sentenceSeparators, StringSplitOptions.RemoveEmptyEntries)
-                .Where(sentence => !string.IsNullOrWhiteSpace(sentence))
-                .ToArray();
+            var sentenceSeparators = new string[] { ".", "!", "?" };
+            var sentenceExtraSeparators = new string[] { ". " };
+            var demo = value.Split(sentenceSeparators, StringSplitOptions.RemoveEmptyEntries);
+            var demo2 = value.Split(sentenceExtraSeparators, StringSplitOptions.RemoveEmptyEntries);
 
-            return sentences.Length;
+            var result = demo.Count(sentence => !string.IsNullOrWhiteSpace(sentence));
+
+            return value.Split(sentenceSeparators, StringSplitOptions.RemoveEmptyEntries)
+                .Count(sentence => !string.IsNullOrWhiteSpace(sentence));
         }
-        
+
+        /// <summary>
+        /// Gets the number of paragraphs in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of paragraphs in the current string.</returns>
+        public static int GetParagraphsCount(this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return 0;
+            }
+            return value.Split(new string[] { "\r\n\r\n", "\n\n" }, StringSplitOptions.RemoveEmptyEntries)
+                .Count(paragraph => !string.IsNullOrWhiteSpace(paragraph));
+        }
+
         /// <summary>
         /// Converts the specified string to uppercase using the casing rules of the invariant culture.
         /// </summary>
@@ -230,6 +252,26 @@ namespace TextCase.Extensions
         public static string ToTrainCase(this string value)
         {
             return TextCase.Convert(value, Case.TrainCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to base64 decode case.
+        /// </summary>
+        /// <param name="value">The string to convert to base64 decode case.</param>
+        /// <returns>The specified text converted to base64 decode case.</returns>
+        public static string ToBase64DecodeCase(this string value)
+        {
+            return TextCase.Convert(value, Case.Base64DecodeCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to base64 encode case.
+        /// </summary>
+        /// <param name="value">The string to convert to base64 encode case.</param>
+        /// <returns>The specified text converted to base64 encode case.</returns>
+        public static string ToBase64EncodeCase(this string value)
+        {
+            return TextCase.Convert(value, Case.Base64EncodeCase);
         }
     }
 }

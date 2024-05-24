@@ -21,7 +21,9 @@ namespace TextCase
         ConstantCase,
         CobolCase,
         TrainCase,
-        InverseCase
+        InverseCase,
+        Base64EncodeCase,
+        Base64DecodeCase
     }
 
     public static class TextCase
@@ -49,6 +51,11 @@ namespace TextCase
         public static int GetSentencesCount(string text)
         {
             return text.GetSentencesCount();
+        }
+
+        public static int GetParagraphsCount(string text)
+        {
+            return text.GetParagraphsCount();
         }
     }
 }
