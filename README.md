@@ -9,6 +9,7 @@ Key Features
 - Wide Range of Conversions: Transform text into 19 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, Base64 encoding/decoding, and more.
 - Text Analysis: Easily count characters, words, letters, and sentences within your text.
 - Easy Integration: Simple and intuitive API that integrates seamlessly with your .NET applications.
+- List Available Conversions: Easily retrieve all supported text cases programmatically.
 
 Available Conversions
 - UpperCase: Converts text to uppercase.
@@ -134,6 +135,18 @@ TextCase.GetSentencesCount("You talking to me?");
 // Paragraphs Count
 TextCase.GetParagraphsCount("You talking to me?");
 "You talking to me?".GetParagraphsCount();
+
+```
+
+**GetAllCases**
+The GetAllCases method has been introduced to allow users to retrieve a complete list of all available text case conversions.
+```cscharp
+var allCases = TextCase.GetAllCases();
+
+foreach (var textCase in allCases)
+{
+    Console.WriteLine(textCase);
+}
 
 ```
 
