@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TextCase.Converters;
 using TextCase.Extensions;
 
@@ -28,9 +30,24 @@ namespace TextCase
 
     public static class TextCase
     {
+        /// <summary>
+        /// Convert text to specified case
+        /// </summary>
+        /// <param name="text">Text to convert</param>
+        /// <param name="textCase">Text case to convert</param>
+        /// <returns>The converted text</returns>
         public static string Convert(string text, Case textCase)
         {
             return TextCaseFactory.GetCaseConverter(textCase).Convert(text);
+        }
+
+        /// <summary>
+        /// Get all available cases
+        /// </summary>
+        /// <returns>Returns all available cases</returns>
+        public static IEnumerable<Case> GetAllCases()
+        {
+            return Enum.GetValues(typeof(Case)).Cast<Case>();
         }
 
         public static int GetTextCount(string text)

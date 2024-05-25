@@ -1,10 +1,25 @@
 ﻿using System;
+using System.Linq;
 using Xunit;
 
 namespace TextCase.UnitTests
 {
     public class StringExtensionsTest
     {
+        [Fact]
+        public void GetAllCases_WhenCalled_ShouldReturnAllCases()
+        {
+            // Arrange
+            var expectedCount = Enum.GetNames(typeof(Case)).Length;
+
+            // Act
+            var result = TextCase.GetAllCases();
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(expectedCount, result.Count());
+        }
+
         [Theory]
         [InlineData("", 0)]
         [InlineData("hello world", 11)]
