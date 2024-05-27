@@ -26,16 +26,16 @@ namespace TextCase.Converters
             }
 
             // Replace one or more consecutive non-letter, non-digit, non-newline characters with a single dash
-            var replacedPunctuation = Regex.Replace(text, @"[^\p{L}0-9\n]+", "-");
+            var replacedPunctuation = Regex.Replace(text, @"[^\p{L}0-9" + Environment.NewLine + "]+", "-");
 
             // Split the text into lines
-            var lines = replacedPunctuation.Split('\n');
+            var lines = replacedPunctuation.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
             // Convert each line to title case and trim leading and trailing dashes
             var processedLines = lines.Select(line => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(line.ToLowerInvariant()).Trim('-'));
 
             // Join the lines back together
-            return string.Join("\n", processedLines);
+            return string.Join(Environment.NewLine, processedLines);
         }
     }
 }

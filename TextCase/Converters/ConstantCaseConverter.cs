@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace TextCase.Converters
@@ -21,16 +22,16 @@ namespace TextCase.Converters
             }
 
             // Replace one or more consecutive non-alphanumeric characters (except newlines) with a single underscore
-            var replacedPunctuation = Regex.Replace(text, @"[^\w\n]+", "_");
+            var replacedPunctuation = Regex.Replace(text, @"[^\w" + Environment.NewLine + "]+", "_");
 
             // Split the text into lines
-            var lines = replacedPunctuation.Split('\n');
+            var lines = replacedPunctuation.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
             // Convert each line to upper case and trim leading and trailing underscores
             var processedLines = lines.Select(line => line.Trim().ToUpperInvariant().Trim('_'));
 
             // Join the lines back together
-            return string.Join("\n", processedLines);
+            return string.Join(Environment.NewLine, processedLines);
         }
     }
 }

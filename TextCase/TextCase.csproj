@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>TextCase</PackageId>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <Authors>Ottorino Bruni</Authors>
     <Description>The TextCase library for .NET helps changing the cases of existing texts.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
