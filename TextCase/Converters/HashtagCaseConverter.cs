@@ -20,7 +20,7 @@ namespace TextCase.Converters
                 return string.Empty;
             }
 
-            var lines = text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < lines.Length; i++)
             {
                 var words = lines[i].Split(new[] { ' ', '\t', '\r' }, StringSplitOptions.RemoveEmptyEntries);
@@ -30,7 +30,7 @@ namespace TextCase.Converters
                 }
             }
 
-            return string.Join("\n", lines);
+            return string.Join(Environment.NewLine, lines);
         }
     }
 
