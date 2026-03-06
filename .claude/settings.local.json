@@ -3,7 +3,8 @@
     "allow": [
       "Bash(ls -1 /Users/ottorinobruni/Documents/Work/DotNet/TextCase/TextCase.UnitTests/*.cs)",
       "Bash(dotnet build)",
-      "Bash(dotnet test)"
+      "Bash(dotnet test)",
+      "Bash(git rm --cached CLAUDE.md AGENTS.md)"
     ]
   }
 }
