@@ -6,8 +6,8 @@
 TextCase is a powerful .NET library designed to simplify text manipulation by providing a variety of case conversion methods.
 
 Key Features
-- Wide Range of Conversions: Transform text into 19 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, Base64 encoding/decoding, and more.
-- Text Analysis: Easily count characters, words, letters, and sentences within your text.
+- Wide Range of Conversions: Transform text into 21 different cases including UpperCase, LowerCase, TitleCase, CamelCase, PascalCase, Base64 encoding/decoding, DotCase, ROT13, and more.
+- Text Analysis: Easily count characters, words, unique words, letters, sentences, paragraphs, numbers, and estimate reading time.
 - Easy Integration: Simple and intuitive API that integrates seamlessly with your .NET applications.
 - List Available Conversions: Easily retrieve all supported text cases programmatically.
 
@@ -30,13 +30,18 @@ Available Conversions
 - AlternateCase: Alternates case starting with uppercase.
 - Base64EncodeCase: Encodes text to Base64.
 - Base64DecodeCase: Decodes Base64 text.
+- DotCase: Converts text to dot.case.
+- Rot13Case: Applies the ROT13 substitution cipher.
 
 Text Analysis Examples:
 - number of characters
 - number of words
+- number of unique words
 - number of letters
 - number of sentences
 - number of paragraphs
+- number of numeric digits
+- estimated reading time
 
 ## Usage Examples:
 
@@ -112,6 +117,14 @@ TextCase.Convert("You talking to me?", Case.Base64EncodeCase);
 // Decode Base64 text
 TextCase.Convert("WW91IHRhbGtpbmcgdG8gbWU/", Case.Base64DecodeCase);
 "WW91IHRhbGtpbmcgdG8gbWU?".ToBase64DecodeCase();
+
+// you.talking.to.me
+TextCase.Convert("You talking to me?", Case.DotCase);
+"You talking to me?".ToDotCase();
+
+// Lbh gnyxvat gb zr?
+TextCase.Convert("You talking to me?", Case.Rot13Case);
+"You talking to me?".ToRot13Case();
 ```
 Text Analysis Functions
 
@@ -135,6 +148,18 @@ TextCase.GetSentencesCount("You talking to me?");
 // Paragraphs Count
 TextCase.GetParagraphsCount("You talking to me?");
 "You talking to me?".GetParagraphsCount();
+
+// Unique Words Count
+TextCase.GetUniqueWordsCount("the cat sat on the mat");
+"the cat sat on the mat".GetUniqueWordsCount();
+
+// Numbers Count
+TextCase.GetNumbersCount("I have 2 cats and 10 dogs");
+"I have 2 cats and 10 dogs".GetNumbersCount();
+
+// Reading Time (returns TimeSpan, default 200 wpm)
+TextCase.GetReadingTime("You talking to me?");
+"You talking to me?".GetReadingTime();
 
 ```
 

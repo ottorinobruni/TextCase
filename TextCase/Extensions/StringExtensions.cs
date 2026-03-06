@@ -80,6 +80,53 @@ namespace TextCase.Extensions
         }
 
         /// <summary>
+        /// Gets the number of unique words in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of unique words in the current string.</returns>
+        public static int GetUniqueWordsCount(this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return 0;
+            }
+            return Regex.Matches(value, @"\b\w+\b")
+                .Select(m => m.Value)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .Count();
+        }
+
+        /// <summary>
+        /// Gets the estimated reading time for the current String value.
+        /// </summary>
+        /// <param name="value">The string to estimate reading time for.</param>
+        /// <param name="wordsPerMinute">The average reading speed in words per minute. Default is 200.</param>
+        /// <returns>The estimated reading time as a TimeSpan.</returns>
+        public static TimeSpan GetReadingTime(this string value, int wordsPerMinute = 200)
+        {
+            if (string.IsNullOrWhiteSpace(value) || wordsPerMinute <= 0)
+            {
+                return TimeSpan.Zero;
+            }
+            var wordCount = value.GetWordsCount();
+            return TimeSpan.FromSeconds(wordCount / (double)wordsPerMinute * 60);
+        }
+
+        /// <summary>
+        /// Gets the number of numeric digit characters in the current String value.
+        /// </summary>
+        /// <param name="value">The string to count.</param>
+        /// <returns>The number of digit characters in the current string.</returns>
+        public static int GetNumbersCount(this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return 0;
+            }
+            return value.Count(char.IsDigit);
+        }
+
+        /// <summary>
         /// Gets the number of paragraphs in the current String value.
         /// </summary>
         /// <param name="value">The string to count.</param>
@@ -272,6 +319,26 @@ namespace TextCase.Extensions
         public static string ToBase64EncodeCase(this string value)
         {
             return TextCase.Convert(value, Case.Base64EncodeCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text to dot case.
+        /// </summary>
+        /// <param name="value">The string to convert to dot case.</param>
+        /// <returns>The specified text converted to dot case.</returns>
+        public static string ToDotCase(this string value)
+        {
+            return TextCase.Convert(value, Case.DotCase);
+        }
+
+        /// <summary>
+        /// Converts the specified text using the ROT13 substitution cipher.
+        /// </summary>
+        /// <param name="value">The string to convert using ROT13.</param>
+        /// <returns>The specified text converted using ROT13.</returns>
+        public static string ToRot13Case(this string value)
+        {
+            return TextCase.Convert(value, Case.Rot13Case);
         }
     }
 }

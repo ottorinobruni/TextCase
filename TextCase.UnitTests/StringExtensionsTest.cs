@@ -105,5 +105,48 @@ namespace TextCase.UnitTests
             // Assert
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("hello world", 2)]
+        [InlineData("the cat sat on the mat", 5)]
+        [InlineData("Hello hello HELLO", 1)]
+        [InlineData("one two three one two", 3)]
+        public void GetUniqueWordsCount_WhenInput_UniqueWordsShouldBeCount(string input, int count)
+        {
+            // Execute
+            var result = TextCase.GetUniqueWordsCount(input);
+
+            // Assert
+            Assert.Equal(count, result);
+        }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("I have 2 cats and 10 dogs", 3)]
+        [InlineData("hello world", 0)]
+        [InlineData("abc123def456", 6)]
+        [InlineData("12345", 5)]
+        public void GetNumbersCount_WhenInput_NumbersShouldBeCount(string input, int count)
+        {
+            // Execute
+            var result = TextCase.GetNumbersCount(input);
+
+            // Assert
+            Assert.Equal(count, result);
+        }
+
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData("hello world", 2)]
+        [InlineData("one two three four", 4)]
+        public void GetReadingTime_WhenInput_ReadingTimeShouldBeExpected(string input, int expectedSeconds)
+        {
+            // Execute (using 60 wpm for predictable integer results)
+            var result = TextCase.GetReadingTime(input, 60);
+
+            // Assert
+            Assert.Equal(expectedSeconds, (int)result.TotalSeconds);
+        }
     }
 }

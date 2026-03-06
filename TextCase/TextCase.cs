@@ -25,7 +25,9 @@ namespace TextCase
         TrainCase,
         InverseCase,
         Base64EncodeCase,
-        Base64DecodeCase
+        Base64DecodeCase,
+        DotCase,
+        Rot13Case
     }
 
     public static class TextCase
@@ -73,6 +75,21 @@ namespace TextCase
         public static int GetParagraphsCount(string text)
         {
             return text.GetParagraphsCount();
+        }
+
+        public static int GetUniqueWordsCount(string text)
+        {
+            return text.GetUniqueWordsCount();
+        }
+
+        public static TimeSpan GetReadingTime(string text, int wordsPerMinute = 200)
+        {
+            return text.GetReadingTime(wordsPerMinute);
+        }
+
+        public static int GetNumbersCount(string text)
+        {
+            return text.GetNumbersCount();
         }
     }
 }

@@ -27,6 +27,8 @@ namespace TextCase
                 Case.InverseCase => new InverseCaseConverter(),
                 Case.Base64DecodeCase => new Base64DecodeCaseConverter(),
                 Case.Base64EncodeCase => new Base64EncodeCaseConverter(),
+                Case.DotCase => new DotCaseConverter(),
+                Case.Rot13Case => new Rot13CaseConverter(),
                 _ => throw new ArgumentException("No valid TextCase"),
             };
         }
