@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Local AI agent instructions (keep private)
+CLAUDE.md
+AGENTS.md
+
 # User-specific files
 *.rsuser
 *.suo
